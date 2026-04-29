@@ -31,7 +31,7 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnMigrar = new System.Windows.Forms.Button();
             this.btnConsultaBd = new System.Windows.Forms.Button();
-            this.txtLog = new System.Windows.Forms.TextBox();
+            this.txtRegistro = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnBuscar
@@ -64,15 +64,15 @@
             this.btnConsultaBd.UseVisualStyleBackColor = true;
             this.btnConsultaBd.Click += new System.EventHandler(this.btnConsultaBd_Click);
             // 
-            // txtLog
+            // txtRegistro
             // 
-            this.txtLog.Location = new System.Drawing.Point(12, 84);
-            this.txtLog.Multiline = true;
-            this.txtLog.Name = "txtLog";
-            this.txtLog.ReadOnly = true;
-            this.txtLog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtLog.Size = new System.Drawing.Size(475, 354);
-            this.txtLog.TabIndex = 3;
+            this.txtRegistro.Location = new System.Drawing.Point(12, 84);
+            this.txtRegistro.Multiline = true;
+            this.txtRegistro.Name = "txtRegistro";
+            this.txtRegistro.ReadOnly = true;
+            this.txtRegistro.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtRegistro.Size = new System.Drawing.Size(475, 354);
+            this.txtRegistro.TabIndex = 3;
             // 
             // frmPrincipal
             // 
@@ -80,7 +80,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(497, 479);
             this.Controls.Add(this.btnConsultaBd);
-            this.Controls.Add(this.txtLog);
+            this.Controls.Add(this.txtRegistro);
             this.Controls.Add(this.btnMigrar);
             this.Controls.Add(this.btnBuscar);
             this.Name = "frmPrincipal";
@@ -95,7 +95,7 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnMigrar;
         private System.Windows.Forms.Button btnConsultaBd;
-        private System.Windows.Forms.TextBox txtLog;
+        private System.Windows.Forms.TextBox txtRegistro;
     }
 }
 

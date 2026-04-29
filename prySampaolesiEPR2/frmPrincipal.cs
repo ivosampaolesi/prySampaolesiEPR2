@@ -34,12 +34,12 @@ namespace prySampaolesiEPR2
                 {
                     archivosSeleccionados[0] = ofd.FileNames[0];
                     archivosSeleccionados[1] = ofd.FileNames[1];
-                    txtLog.AppendText($"Archivo 1: {Path.GetFileName(archivosSeleccionados[0])}" + Environment.NewLine);
-                    txtLog.AppendText($"Archivo 2: {Path.GetFileName(archivosSeleccionados[1])}" + Environment.NewLine);
+                    txtRegistro.AppendText($"Archivo 1: {Path.GetFileName(archivosSeleccionados[0])}" + Environment.NewLine);
+                    txtRegistro.AppendText($"Archivo 2: {Path.GetFileName(archivosSeleccionados[1])}" + Environment.NewLine);
                 }
                 else
                 {
-                    txtLog.AppendText("Error: Debes seleccionar exactamente 2 archivos." + Environment.NewLine);
+                    txtRegistro.AppendText("Error: Debes seleccionar exactamente 2 archivos." + Environment.NewLine);
                 }
             }
         }
@@ -48,7 +48,7 @@ namespace prySampaolesiEPR2
         {
             if (archivosSeleccionados[0] == null || archivosSeleccionados[1] == null)
             {
-                txtLog.AppendText("Error: Primero debes seleccionar 2 archivos." + Environment.NewLine);
+                txtRegistro.AppendText("Error: Primero debes seleccionar 2 archivos." + Environment.NewLine);
                 return;
             }
 
@@ -57,11 +57,11 @@ namespace prySampaolesiEPR2
 
             if (!conexion.Conectar())
             {
-                txtLog.AppendText("Error: No se pudo conectar a la base de datos." + Environment.NewLine);
+                txtRegistro.AppendText("Error: No se pudo conectar a la base de datos." + Environment.NewLine);
                 return;
             }
 
-            txtLog.AppendText("Iniciando migración..." + Environment.NewLine);
+            txtRegistro.AppendText("Iniciando migración..." + Environment.NewLine);
 
             try
             {
@@ -87,11 +87,11 @@ namespace prySampaolesiEPR2
                 if (archivoArticulos != null)
                     ProcesarArchivo(conexion, archivoArticulos, "Articulos");
 
-                txtLog.AppendText("Migración completada exitosamente." + Environment.NewLine);
+                txtRegistro.AppendText("Migración completada exitosamente." + Environment.NewLine);
             }
             catch (Exception ex)
             {
-                txtLog.AppendText($"Error durante la migración: {ex.Message}" + Environment.NewLine);
+                txtRegistro.AppendText($"Error durante la migración: {ex.Message}" + Environment.NewLine);
             }
             finally
             {
@@ -115,7 +115,7 @@ namespace prySampaolesiEPR2
                     int camposEsperados = tabla == "categorias" ? 2 : 4;
                     if (datos.Length != camposEsperados)
                     {
-                        txtLog.AppendText($"Advertencia: Línea con {datos.Length} campos, se esperaban {camposEsperados}: {linea}" + Environment.NewLine);
+                        txtRegistro.AppendText($"Advertencia: Línea con {datos.Length} campos, se esperaban {camposEsperados}: {linea}" + Environment.NewLine);
                         errores++;
                         continue;
                     }
@@ -135,14 +135,14 @@ namespace prySampaolesiEPR2
                         }
                         else
                         {
-                            txtLog.AppendText($"Error al insertar en {tabla}: {linea}" + Environment.NewLine);
+                            txtRegistro.AppendText($"Error al insertar en {tabla}: {linea}" + Environment.NewLine);
                             errores++;
                         }
                     }
                 }
             }
 
-            txtLog.AppendText($"{Path.GetFileName(ruta)} ({tabla}): {insertados} registros insertados, {errores} errores." + Environment.NewLine);
+            txtRegistro.AppendText($"{Path.GetFileName(ruta)} ({tabla}): {insertados} registros insertados, {errores} errores." + Environment.NewLine);
         }
 
         private string GenerarComandoInsert(string[] datos, string tabla)
@@ -160,7 +160,7 @@ namespace prySampaolesiEPR2
             }
             catch (Exception ex)
             {
-                txtLog.AppendText($"Error al generar comando: {ex.Message}" + Environment.NewLine);
+                txtRegistro.AppendText($"Error al generar comando: {ex.Message}" + Environment.NewLine);
             }
             return "";
         }
