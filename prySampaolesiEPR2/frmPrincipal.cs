@@ -97,6 +97,7 @@ namespace prySampaolesiEPR2
             {
                 conexion.Desconectar();
             }
+            btnMigrar.Enabled = false;
         }
 
         private void ProcesarArchivo(clsConexion conexion, string ruta, string tabla)
@@ -169,6 +170,7 @@ namespace prySampaolesiEPR2
         {
             frmConsulta frm = new frmConsulta();
             frm.ShowDialog();
+
         }
     }
 }
