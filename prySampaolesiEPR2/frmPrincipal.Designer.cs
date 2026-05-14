@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnMigrar = new System.Windows.Forms.Button();
             this.btnConsultaBd = new System.Windows.Forms.Button();
@@ -83,6 +84,8 @@
             this.Controls.Add(this.txtRegistro);
             this.Controls.Add(this.btnMigrar);
             this.Controls.Add(this.btnBuscar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrincipal";
             this.Text = "Migracion";
             this.ResumeLayout(false);

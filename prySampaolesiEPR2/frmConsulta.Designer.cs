@@ -26,6 +26,7 @@ namespace prySampaolesiEPR2
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsulta));
             this.cmbTablas = new System.Windows.Forms.ComboBox();
             this.dgvTablas = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTablas)).BeginInit();
@@ -52,6 +53,7 @@ namespace prySampaolesiEPR2
             this.dgvTablas.Location = new System.Drawing.Point(12, 48);
             this.dgvTablas.Name = "dgvTablas";
             this.dgvTablas.ReadOnly = true;
+            this.dgvTablas.RowHeadersWidth = 51;
             this.dgvTablas.Size = new System.Drawing.Size(760, 390);
             this.dgvTablas.TabIndex = 1;
             // 
@@ -62,6 +64,8 @@ namespace prySampaolesiEPR2
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dgvTablas);
             this.Controls.Add(this.cmbTablas);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmConsulta";
             this.Text = "Consultar Base de Datos";
             this.Load += new System.EventHandler(this.frmConsulta_Load);
